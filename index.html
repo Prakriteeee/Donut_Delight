@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delicious Donuts - Your Sweet Cravings</title>
+  <link rel="stylesheet" href="styles.css">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+ 
+</head>
+
+<body>
+  
+<!-- Header section start -->
+<header>
+  <input type="checkbox" id="toggler">
+  <label for="toggler" class="fa fa-bars"></label>
+
+  <a href="#" class="logo">Donut<span>&#127849;</span>Delight</a>
+
+  <nav class="navbar">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#product">Products</a>
+    <a href="#review">Reviews</a>
+    <a href="#cart">Cart<span id="cart-count" class="cart-count">0</span></a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="icons">
+    <a href="#cart" class="fa-solid fa-cart-shopping"></a>
+
+    <!-- User Icon with Dropdown -->
+    <div class="user-dropdown">
+      <i class="fa-solid fa-user user-icon"></i>
+      <div class="dropdown-content">
+        <a href="login.html">Login</a>
+        <a href="signup.html">Signup</a>
+        <a href="javascript:void(0);" onclick="togglePaymentForm()">Pay</a> <!-- Pay Option -->
+      </div>
+    </div>
+  </div>
+</header>
+<!-- Header section end -->
+
+
+<!-- Payment Form Modal -->
+<div id="payment-form" class="payment-form">
+  <div class="payment-container">
+    <!-- Close Button -->
+    <button class="close-btn" onclick="togglePaymentForm()">Close</button>
+
+    <!-- Payment Form Content -->
+    <i class="fa-solid fa-credit-card card-icon"></i>
+    <h2>Complete Your Payment</h2>
+    <form action="#" method="POST">
+      <input type="text" placeholder="Card Number" required>
+      <input type="text" placeholder="Cardholder Name" required>
+      <input type="text" placeholder="Expiration Date (MM/YY)" required>
+      <input type="text" placeholder="CVV" required>
+      <button type="submit" class="btn">Pay Now</button>
+    </form>
+  </div>
+</div>
+
+
+
+ <!-- Home section starts -->
+  <section class="home" id="home">
+    <div class="content">
+      <h3>Freshly Baked Donuts</h3>
+      <span>Sweet & Delicious Donuts</span>
+      <p>Indulge in our wide variety of freshly baked, mouth-watering donuts made with the finest ingredients. Whether you're in the mood for something classic or adventurous, we've got something for everyone!</p>
+      <a href="#product" class="btn">Order Now</a>
+    </div>
+
+   
+  </section>
+  <!-- Home section end -->
+
+  <!-- About section starts -->
+  <section class="about" id="about">
+    <h1 class="heading"><span>About </span>Us</h1>
+    <div class="row">
+      <div class="image_container">
+        <img src="donut-image.jpg">
+      </div>
+      <div class="content">
+        <h3>Why Choose Donut Delight?</h3>
+        <p>We bake donuts fresh daily, using only the finest ingredients to ensure the best taste. From traditional glazed to innovative flavors, each bite promises to be a delightful experience.</p>
+        <a href="#" class="btn">Learn More</a>
+      </div>
+    </div>
+  </section>
+  <!-- About section end -->
+
+  <!-- Icons section start -->
+  <section class="icons_container">
+    <div class="icons">
+      <i class="fa-solid fa-truck"></i>
+      <div class="info">
+        <h3>Free Delivery</h3>
+        <span>On all orders</span>
+      </div>
+    </div>
+    <div class="icons">
+      <i class="fa-solid fa-sack-dollar"></i>
+      <div class="info">
+        <h3>Easy Returns</h3>
+        <span>Money-back guarantee</span>
+      </div>
+    </div>
+    <div class="icons">
+      <i class="fa-solid fa-gift"></i>
+      <div class="info">
+        <h3>Offers & Gifts</h3>
+        <span>On all orders</span>
+      </div>
+    </div>
+    <div class="icons">
+      <i class="fa-solid fa-credit-card"></i>
+      <div class="info">
+        <h3>Secure Payment</h3>
+        <span>Protected by PayPal</span>
+      </div>
+    </div>
+  </section>
+  <!-- Icons section end -->
+
+
+ 
+   <!-- Product section start -->
+<section class="products" id="product">
+  <h1 class="heading">Latest <span>Donuts</span></h1>
+  <div class="card_container">
+    <div class="card">
+      <span class="discount">-10%</span>
+      <div class="card_img">
+        <img src="chocolate-donut.jpg" alt="Chocolate Donut">
+        <div class="icons">
+         
+          <a href="#" class="card_btn" onclick="addToCart('Chocolate Glazed', 3.00)">Add to Cart</a>
+        </div>
+      </div>
+      <div class="content">
+        <h3>Chocolate Glazed</h3>
+        <div class="price">$3.00 <span>$3.50</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="discount">-5%</span>
+      <div class="card_img">
+        <img src="strawberry-donut.jpg" alt="Strawberry Donut">
+        <div class="icons">
+         
+          <a href="#" class="card_btn" onclick="addToCart('Strawberry Delight', 3.50)">Add to Cart</a>
+        </div>
+      </div>
+      <div class="content">
+        <h3>Strawberry Delight</h3>
+        <div class="price">$3.50 <span>$4.00</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="discount">-12%</span>
+      <div class="card_img">
+        <img src="vanilla-donut.jpg" alt="Vanilla Donut">
+        <div class="icons">
+          
+          <a href="#" class="card_btn" onclick="addToCart('Vanilla Bean', 2.75)">Add to Cart</a>
+        </div>
+      </div>
+      <div class="content">
+        <h3>Vanilla Bean</h3>
+        <div class="price">$2.75 <span>$3.10</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Product section end -->
+
+   <!-- Review section start -->
+  <section class="review" id="review">
+    <h1 class="heading">Customer's <span>Reviews</span></h1>
+    <div class="card_container">
+      <div class="card">
+        <div class="stars">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <p>These donuts are amazing! So fresh and the flavors are just out of this world!</p>
+        <div class="user">
+          <img src="customer1.jpg" alt="Customer 1">
+          <div class="user_info">
+            <h3>Keifer Watson</h3>
+            <span>Happy Customer</span>
+          </div>
+        </div>
+        <i class="fa-solid fa-quote-right"></i>
+      </div>
+      <div class="card">
+        <div class="stars">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <p>Delicious and so soft! Perfect with my morning coffee.</p>
+        <div class="user">
+          <img src="customer2.jpg" alt="Customer 2">
+          <div class="user_info">
+            <h3>Lyra Smith</h3>
+            <span>Satisfied Customer</span>
+          </div>
+        </div>
+        <i class="fa-solid fa-quote-right"></i>
+      </div>
+    </div>
+  </section>
+  <!-- Review section end -->
+   
+  <!-- Cart Section -->
+<section id="cart" class="section bg-light">
+  <h1 class="heading"><span>Your </span>Cart</h1>
+  <div class="container">
+    <h2 class="text-center mb-4">Your Cart</h2>
+    <ul class="list-group" id="cart-list"></ul>
+    
+    <div class="cart-summary mt-4">
+      <h5>Total: $<span id="total">0.00</span></h5>
+      <button class="btn-checkout" onclick="scrollToUserIcon()">Proceed to Checkout</button>
+    </div>
+    
+  </div>
+</section>
+
+
+<!-- Cart Section End -->
+
+
+  <!-- Contact section start -->
+   <section class="contact" id="contact">
+    <h1 class="heading"><span>Contact</span> Us</h1>
+    <div class="row">
+      <form action="">
+        <input type="text" placeholder="Your Name" class="card" required>
+        <input type="email" placeholder="Your Email" class="card" required>
+        <input type="number" placeholder="Your Number" class="card" required>
+        <textarea name="" class="card" placeholder="Your Message" cols="30" rows="10" required></textarea>
+        <input type="submit" value="Send Message" class="btn">
+      </form>
+    </div>
+  </section>
+  <!-- Contact section end -->
+
+  <!-- Footer section start -->
+  <section class="footer">
+    <div class="card_container">
+      <div class="card">
+        <h3>Quick Links</h3>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#product">Products</a>
+        <a href="#review">Reviews</a>
+        <a href="#contact">Contact</a>
+      </div>
+  
+      <div class="card">
+        <h3>Locations</h3>
+        <a href="#">Kathmandu</a>
+        <a href="#">Lalitpur</a>
+        <a href="#">Bhaktapur</a>
+      </div>
+  
+      <div class="card">
+        <h3>Contact Info</h3>
+        <a href="#">+977 9806802951</a>
+        <a href="#">prakritigiri153@gmail.com</a>
+        <a href="#">Jhamsikhel, Lalitpur, Nepal</a>
+      </div>
+    </div>
+    <div class="credit">Created by <span>Prakriteee</span> | All Rights Reserved</div>
+  </section>
+  
+<!-- Footer section ends-->
+
+  <script>
+    let cart = [];
+
+    function addToCart(name, price) {
+      alert(`${name} added to cart!`);
+      cart.push({ name, price });
+      updateCart();
+    }
+
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      updateCart();
+    }
+
+    function updateCart() {
+      const cartList = document.getElementById('cart-list');
+      const total = document.getElementById('total');
+      const cartCount = document.getElementById('cart-count');
+
+      cartList.innerHTML = '';
+      let totalPrice = 0;
+
+      cart.forEach((item, index) => {
+        const li = document.createElement('li');
+        li.classList.add('list-group-item');
+        li.innerHTML = `${item.name} - $${item.price.toFixed(2)} <button onclick="removeFromCart(${index})">Remove</button>`;
+        cartList.appendChild(li);
+        totalPrice += item.price;
+      });
+
+      total.textContent = totalPrice.toFixed(2);
+      cartCount.textContent = cart.length;
+    }
+
+
+
+
+    // Toggle Payment Form visibility
+    function togglePaymentForm() {
+      const paymentForm = document.getElementById('payment-form');
+      paymentForm.classList.toggle('show');
+    }
+  </script>
+
+<script>
+  function scrollToUserIcon() {
+    const userIcon = document.querySelector('.user-icon');
+    if (userIcon) {
+      userIcon.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+      // Open payment form after a delay to allow scrolling
+      setTimeout(() => {
+        togglePaymentForm();
+      }, 600);
+    }
+  }
+
+  function togglePaymentForm() {
+    const form = document.getElementById("payment-form");
+    form.classList.toggle("active");
+  }
+</script>
+
+</body>
+
+</html>
